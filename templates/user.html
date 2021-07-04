@@ -1,0 +1,27 @@
+
+{% extends "template.html" %}
+{% block content %}
+
+<h1 class="mb-3" style="font-family:sans-serif;text-shadow: 2px 2px 5px gray;"> Click on the customer to transfer amount:</h1>
+<div class="table-responsive" >
+<table class="table table-hover" style="margin-top: 10px;">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"> Name</th>
+      <th scope="col"> Email</th>
+        <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in result %}
+    <tr>
+      <td><a class="nav-link" href="/transactions">{{ item.name }}</a></td>
+      <td><a class="nav-link" href="/transactions">{{ item.email }}</a></td>
+      <td><a class="nav-link" href="/transactions">{{ item.balance }}</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
